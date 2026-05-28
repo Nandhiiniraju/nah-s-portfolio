@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400&family=Inter:wght@300;400;500;600&display=swap");
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-cherry: #47131c;
+  --color-wine: #5a1824;
+  --color-cotton: #ffd7e7;
+  --color-rose: #f8c8d8;
+  --color-cream: #fffde9;
+  --color-ivory: #f7f3e8;
+
+  --font-serif: "Bodoni Moda", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+
+  background: #fffde9;
+  color: #47131c;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+
+.font-serif {
+  font-family: "Bodoni Moda", serif;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    #47131c 0%,
+    #5a1824 50%,
+    #a83a52 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- GLASS ---------- */
+
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 253, 233, 0.6),
+    rgba(255, 215, 231, 0.3)
+  );
+
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+  border: 1px solid rgba(71, 19, 28, 0.12);
+}
+
+.glass-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(71, 19, 28, 0.85),
+    rgba(90, 24, 36, 0.7)
+  );
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 215, 231, 0.15);
+}
+
+/* ---------- BACKGROUNDS ---------- */
+
+.gradient-cherry {
+  background:
+    radial-gradient(circle at 30% 20%, #ffd7e7 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, #f8c8d8 0%, transparent 55%),
+    linear-gradient(135deg, #fffde9 0%, #ffd7e7 100%);
+}
+
+.grain::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.35;
+
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+
+  background-size: 4px 4px;
+}
+
+/* ---------- SHADOWS ---------- */
+
+.shadow-luxe {
+  box-shadow:
+    0 30px 80px -20px rgba(71, 19, 28, 0.35),
+    0 8px 24px -8px rgba(71, 19, 28, 0.2);
+}
+
+.shadow-glow {
+  box-shadow:
+    0 0 60px rgba(248, 200, 216, 0.6),
+    0 0 120px rgba(255, 215, 231, 0.4);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+.marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.float {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.spin-slow {
+  animation: spin 30s linear infinite;
+}
+
+.pulse-ring {
+  animation: pulseRing 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
